@@ -20,19 +20,21 @@ guest_input = st.text_area("Type your query here:", placeholder="Ask me anything
 
 # Option 2: Voice Input
 st.write("🎤 **Voice Input**")
-st.write("Use your microphone to interact with the assistant.")
-if st.button("Start Recording"):
-    st.info("Voice input functionality is coming soon!")
+audio_value = st.audio_input("ask your guestion")
 
 # Process Button
 if st.button("Submit"):
     if guest_input.strip():
-        st.success("Processing your query...")
-        # Placeholder for AI processing logic
+        st.success("Processing your text query...")
+        # Placeholder for AI processing logic for text
         st.write(f"Your query: {guest_input}")
         st.write("Generating a response... (This is where the AI logic will go)")
+    elif audio_value is not None:
+        st.success("Processing your audio query...")
+        # Placeholder for AI processing logic for audio
+        st.write("Audio file uploaded successfully! Generating a response... (This is where the AI logic will go)")
     else:
-        st.error("Please type a query or use the voice input option!")
+        st.error("Please type a query or upload an audio file!")
 
 # Footer
 st.write("---")
