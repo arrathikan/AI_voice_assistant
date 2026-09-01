@@ -1,4 +1,3 @@
 streamlit
-groq
+requests
 python-dotenv
-gTTs #convert the text in th speach 
